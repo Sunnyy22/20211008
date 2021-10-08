@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+header{
+    height: 80px;
+    line-height: 80px;
+    background-color: #333;
+    text-align: center;
+}
+
+header nav > ul > li{ /* > 꺾쇠는 바로 밑 직계자식을 뜻함 */
+                    /* 즉 class명 depth01인 li만 선택한 것 */
+    display: inline-block; /* 까지하면 정렬 이상한데 위치 설정하려면 vertical-align 으로 잡아줌 그럼 menu01,02 떨어져있던것 위로 정렬될 것임  */
+    vertical-align: top; /* 인라인블럭이 있을 때 사용 */
+    width: 200px;
+}
+nav > ul > li > a {
+    color: plum;
+}
+
+nav > ul >li .depth02 li {
+    line-height: 50px;
+}
+
+.depth02{
+    background-color: #333;
+    display: none;/* 스타일은 줘두고 튀어나와있는거 안보이게 none시킴 */
+}
+.depth02 li a{
+    color: #fff;
+}
+header > nav > ul > li:hover .depth02{/* 즉 .depth01한테 마우스를 올렸을때 .depth02를 보이게 할 것이다 (display:none; 했던것을 블럭요소로 설정해서 후버시 다시 보이게 하는 것*/
+    display: block;
+}
+.depth02 li:hover a{
+    color: plum;
+}

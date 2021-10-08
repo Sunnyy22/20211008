@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+legend{
+    position: absolute;
+    left:-9999px;
+}
+fieldset{
+    border:0;
+}
+.wrap{
+    width: 600px;
+    border:1px solid #333;
+    margin: 50px auto;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.wrap form label{ /* label은 인라인요소 인라인요소 특징은 위더스 하이트값 적용이 안됨 그래서 인라인블럭이나 블럭으로 설정. 블럭은 줄바꿈 일어나기때문에 
+                    여기선 인라인블럭으로 잡아줌. 비밀번호가 틀어지는데 인풋 타입 아니라서 그럼 >나중에 수정하기.*/
+    width: 150px;
+    text-align: right;
+    display: inline-block; 
+    vertical-align: middle;
+}
+.wrap form input[type="text"], /* <-쉼표찍고 추가 */
+.wrap form input[type="password"]{
+    width: 300px;
+    height: 30px;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+input[type="button"]{
+    width: 300px;
+    height: 30px;
+    background-color: red;
+    border: 0;
+    color: #fff; 
+    margin: 5px 0;
+}
+.wrap .addr input[type="text"]{
+    margin-left: 156px;
+}
+textarea {
+    width: 300px;
+    height: 150px;
+    resize: none; /* 입력창 크기 줄였다 늘였다 안되게 none 설정 */
+    vertical-align: middle;
+}
+select{
+    width: 200px;
+    height: 40px;
+}
+.btn {
+    text-align: center;
+    margin-top: 50px !important; /* 부모값보다 우선순위  */
+}
+.btn input[type="reset"]{
+    width: 120px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #333;
+}
+.btn input[type="submit"]{
+    width: 120px;
+    height: 40px;
+    background-color: royalblue;
+    border: 1px solid #000;
+    color: #fff;
+}
