@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+li {list-style: none;}
+a {
+    text-decoration: none;
+    color: #333;
+}
+header {
+    text-align: center;
+}
+header h1 {
+    padding: 10px 0;
+}
+header nav {
+    border-top: 1px solid #ccc;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 auto;
+}
+header nav ul li {
+    display: inline-block;
+    width: 120px;
+}
+.main_visual{
+    height: 700px;
+    background: url(https://via.placeholder.com/1920x700/ccc/ccc) center center / cover no-repeat;
+                                                /* 가로x세로/배경컬러/글자컬러 */
+    position: relative;
+}
+.main_visual div{
+    width: 1200px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.main_visual div h2{
+    font-size: 45px;
+}
+.main_visual div p {
+    width: 150px;
+    height: 40px;
+    background-color: #000;
+}
+.main_visual div a{
+    color: #fff;
+}
+.cont01{
+    background-color: teal;
+    padding: 80px 0;
+}
+.cont01 div {
+    width: 1200px;
+    margin: 0 auto;
+}
+.cont01 div::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.cont01 div article{
+    float: left;
+    width: 590px;
+    margin-right: 20px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+.cont01 div article:last-child{
+    margin-right: 0;
+}
+.cont01 div article img {
+    width: 100%;
+    display: block;
+}
+.cont01 div article dl {
+    text-align: center;
+    padding: 30px 0;
+}
+.cont01 article dl dt {
+    font-size: 30px;
+    font-weight: bold;
+}
+.cont01 h3{
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.cont02 {
+    padding: 80px;
+}
+.cont02::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.cont02 div{
+    width: 1200px;
+    margin: 0 auto;
+}
+.cont02 div::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.cont02 div article {
+    float: left;
+    margin-right: 20px;
+    width: 386px;
+}
+.cont02 div article:nth-of-type(3){ /* 다른태그가 섞여있을땐 chlid 가 아니라 타입으로 써야함 */
+    margin-right: 0;
+}
+.cont02 div article img {
+    display: block;
+    width: 100%;
+}
+.cont02 div article dl {
+    background-color: teal;
+    padding: 30px 0;
+    color: #fff;
+    box-sizing: border-box;
+    text-align: center;
+}
+.cont02 article dl dt {
+    font-size: 30px;
+    font-weight: bold;
+}
+.cont02 h3 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+
+}

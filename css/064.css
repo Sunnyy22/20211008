@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+body{
+    background-color: #eee;
+    padding:100px 0;
+}
+
+.wrap{
+    width:1400px;
+    margin: 0 auto;
+}
+
+.wrap .top {
+    border-bottom:1px solid #333;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+.wrap .top h2{
+    font-size: 40px;
+    text-align: center;
+}
+.wrap .top p{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+}
+
+.wrap .top dl dt{
+    text-align: center;
+    font-size: 80px;
+    margin-top: 50px;
+    display: inline-block;/* 인라인요소가 본인 영역만 잡히니 가로값 세로값까지 잡으려고 인라인블럭 하면 원하는 가로세로값으로 라인선 설정가능, 위치값 설정가능한것 */
+    position: relative;
+}
+.wrap .top dl{
+    text-align: center;/* dt는 인라인요소라 부모한테 이것 주면 바로 가운데로 적용가능 */
+}
+.wrap .top dl dt::before {
+    content: '';
+    width: 100%;
+    height: 20px;
+    background-color: yellow;
+    /* display: block;  *//* 블럭주면 부모값 풀로 차고 inline-block주면 글자가 가지고 있는 영역만 잡힘 */
+    /* berfore는 글자 앞에(About me 위에 적용 after는 글자 뒤에다가 적용 
+    블럭주면 겹쳐지지 안ㄶ으니 포지션으로 잡아줄 것 */
+    position: absolute;
+    /* 위에 인라인블럭주고(dl,dt가 인라인 요소라서) 렐러티브 잡기 */
+    bottom: 10px;
+    padding: 0 20px; /* 주면 오른쪽으로 쏠리니 트랜스폼 사용 */
+    left:50%;
+    transform: translateX(-50%);
+    z-index: -1;/* 글자보다 뒤로 보내기 */
+}
+.wrap .top dl dd{
+    text-align:left;
+    font-size: 20px;   
+}
+.wrap .top .btn{
+    width: 0;
+    margin-top:30px;
+    /* 늘 본문이나 타이틀 보다 버튼이 크면 안됨! */
+    font-size: 18px;
+    transition: .5s ease-in-out;
+}
+
+.wrap .top .btn a{
+    width: 220px;
+    height: 60px;
+    line-height:60px;
+    border:1px solid #333;
+    text-align:center;
+    box-sizing: border-box;
+    transition: .5s ease-in-out;
+}
+.wrap .top .btn:hover{/* btn에 위더스0주고 a에 값 스타일 다주고 btn에 호버 호버값준 애한테다가 트렌지션 주면됨 .btn에 트렌지션*/
+    width: 220px;
+    background-color: #333;
+}
+.wrap .top .btn:hover a{
+    color: #fff;
+}
+
+.wrap .bottom h3{
+    font-size:60px;
+    margin-bottom:30px;
+    position: relative;
+    display: inline-block;
+}
+.wrap .bottom a{
+    display: inline-block;
+}
+.wrap .bottom h3::before{/* 해당 태그 바로 앞에 가상 공간주는거/ after는 뒤에 */
+    content: '';
+    width: 100%;
+    height: 20px;
+    background-color: yellow;
+    position:absolute;
+    left:50%;
+    bottom:10px;
+    transform:  translateX(-50%);
+    z-index: -1; /* z인덱스는 px 안붙힘. 붙히면 적용안먹음 */
+    padding: 0 20px;
+}
+.wrap ul {
+    margin-left: 150px;
+}
+.wrap ul li{
+    margin-bottom: 20px;
+}
+.wrap .bottom .fa-solid{
+    font-size: 30px; /* 폰트어썸 아이콘 폰트로 인식되니 폰트로 스타일적용 위더스 하이트로 크기 조절 */
+    background-color: #111;
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    margin-right: 20px;/* 글자랑 거리두기 */
+}
